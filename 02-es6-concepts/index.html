@@ -116,5 +116,32 @@
     // For example: "03-23-2016 Cloudy 56 degrees" where the info comes from each of the weather objects. 
     
     
+var theWeather = [
+  new Weather(80, new Date(), "Cloudy"), 
+  new Weather(53, new Date(), "Rain"), 
+  new Weather(60, new Date(), "Sun")
+];
+    
+    // Use reduce to calculate the average temp for all objects. 
+  console.log(theWeather.reduce((sum, item) => {
+      return sum += item.temp;
+  }, 0));
+// Output: return 193
+    
+    // Use Map to return an array of strings that contain a full description of the weather. 
+    // For example: "03-23-2016 Cloudy 56 degrees" where the info comes from each of the weather objects. 
+    
+    console.log(theWeather.map((item) => {
+        // return item.date + " " + item.weather + " " + item.temp;
+        return `${item.date} ${item.weather} ${item.temp}`;
+    }));
+
+//   Output 
+//   [ 'Fri Sep 15 2017 10:32:29 GMT-0700 (PDT) Cloudy 80',
+// 'Fri Sep 15 2017 10:32:29 GMT-0700 (PDT) Rain 53',
+// 'Fri Sep 15 2017 10:32:29 GMT-0700 (PDT) Sun 60' ]
+
+
+
     
 </script>
